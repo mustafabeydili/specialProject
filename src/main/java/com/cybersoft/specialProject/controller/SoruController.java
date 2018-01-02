@@ -27,7 +27,7 @@ public class SoruController {
     }
 
     @GetMapping(value = "/brans/{brans}/unite/{unite}/bolum/{bolum}/{sayfa}/{kayitsayisi}")
-    public List<Soru> getAllSoruByBransUnitePaging(@PathVariable("brans") String brans, @PathVariable("unite") String unite, @PathVariable("bolum") String bolum, @PathVariable("sayfa") int sayfa, @PathVariable("kayitsayisi") int kayitsayisi) {
+    public List<Soru> getAllSoruByBransUniteBolumPaging(@PathVariable("brans") String brans, @PathVariable("unite") String unite, @PathVariable("bolum") String bolum, @PathVariable("sayfa") int sayfa, @PathVariable("kayitsayisi") int kayitsayisi) {
         List<Soru> findByBransAndUniteAndBolum = soruRepository.findByBransAndUniteAndBolum(brans, unite, bolum, new PageRequest(sayfa, kayitsayisi));
         return findByBransAndUniteAndBolum;
     }
